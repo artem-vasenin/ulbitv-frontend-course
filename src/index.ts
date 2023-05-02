@@ -1,3 +1,3 @@
 import {foo} from './text';
 
-foo();
+foo('MESSAGE');
