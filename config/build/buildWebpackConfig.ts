@@ -6,7 +6,7 @@ import { buildLoaders } from './buildLoaders';
 import { buildResolvers } from './buildResolvers';
 import { buildDevServer } from './buildDevServer';
 
-export const buildWebpackConfig = ({paths, mode, port}: BuildOptions): webpack.Configuration => ({
+export const buildWebpackConfig = ({paths, mode, port, isDev}: BuildOptions): webpack.Configuration => ({
   mode,
   entry: paths.entry,
   output: {
@@ -19,6 +19,6 @@ export const buildWebpackConfig = ({paths, mode, port}: BuildOptions): webpack.C
     rules: buildLoaders(),
   },
   resolve: buildResolvers(),
-  devtool: 'inline-source-map',
-  devServer: buildDevServer(port),
+  devtool: isDev ? 'inline-source-map' : undefined,
+  devServer: isDev ? buildDevServer(port) : undefined,
 });

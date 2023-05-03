@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
-    "dev": "webpack serve"
+    "build:prod": "webpack --env mode=production",
+    "build:dev": "webpack --env mode=development",
+    "dev": "webpack serve --env port=3000"
   },
   "repository": {
     "type": "git",
