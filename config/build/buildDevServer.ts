@@ -1,7 +1,8 @@
 import { Configuration as DSConfig } from 'webpack-dev-server';
+import { BuildOptions } from './types/config';
 
-export const buildDevServer = (port: number): DSConfig => ({
-  port,
+export const buildDevServer = (options: BuildOptions): DSConfig => ({
+  port: options.port,
   open: true,
   historyApiFallback: true,
 });

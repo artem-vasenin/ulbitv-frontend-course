@@ -6,19 +6,19 @@ import { buildLoaders } from './buildLoaders';
 import { buildResolvers } from './buildResolvers';
 import { buildDevServer } from './buildDevServer';
 
-export const buildWebpackConfig = ({paths, mode, port, isDev}: BuildOptions): webpack.Configuration => ({
-  mode,
-  entry: paths.entry,
+export const buildWebpackConfig = (options: BuildOptions): webpack.Configuration => ({
+  mode: options.mode,
+  entry: options.paths.entry,
   output: {
     filename: '[name].[contenthash].js',
-    path: paths.build,
+    path: options.paths.build,
     clean: true,
   },
-  plugins: buildPlugins(paths),
+  plugins: buildPlugins(options),
   module: {
-    rules: buildLoaders(isDev),
+    rules: buildLoaders(options),
   },
-  resolve: buildResolvers(),
-  devtool: isDev ? 'inline-source-map' : undefined,
-  devServer: isDev ? buildDevServer(port) : undefined,
+  resolve: buildResolvers(options),
+  devtool: options.isDev ? 'inline-source-map' : undefined,
+  devServer: options.isDev ? buildDevServer(options) : undefined,
 });

@@ -1,11 +1,10 @@
 import { Suspense } from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
 
-import { MainPage } from './pages';
-import { useTheme } from './theme/useTheme';
-import { AboutPageAsync } from './pages/About';
-import { CounterPageAsync } from './pages/Counter';
-import { classNames } from './helpers/classNames/classNames';
+import { useTheme } from 'app/providers/ThemeProvider';
+import { AboutPage } from 'pages/About';
+import { MainPage } from 'pages/MainPage';
+import { classNames } from 'shared/lib/classNames/classNames';
 import './styles/index.scss';
 
 export const App = () => {
@@ -19,16 +18,12 @@ export const App = () => {
       <div>
         <Link to={'/about'}>About</Link>
       </div>
-      <div>
-        <Link to={'counter'}>Counter</Link>
-      </div>
 
       <button onClick={toggleTheme}>Theme</button>
 
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          <Route path={'/about'} element={<AboutPageAsync/>}/>
-          <Route path={'/counter'} element={<CounterPageAsync/>}/>
+          <Route path={'/about'} element={<AboutPage/>}/>
           <Route path={'/'} element={<MainPage/>}/>
         </Routes>
       </Suspense>
