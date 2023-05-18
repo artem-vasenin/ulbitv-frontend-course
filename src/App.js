@@ -1,20 +1,25 @@
-import {useState} from "react";
+import { Link } from 'react-router-dom';
 
 import './App.css';
+import {AppRouter} from "./router/AppRouter";
 
 function App() {
-  const [toggle, setToggle] = useState(false);
-  const [input, setInput] = useState('');
-
   return (
-    <div className="App">
-      <h1 data-testid="title">Hello Rusich</h1>
-      <p data-testid="text">{input}</p>
-      {toggle ? <div data-testid="toggle">Toggle div</div> : null}
-      <button data-testid="button" onClick={() => setToggle(!toggle)}>Click</button>
-      <input data-testid="input" type="text" onChange={e => setInput(e.target.value)}/>
-    </div>
-  );
+    <>
+      <header>
+        <nav>
+          <ul>
+            <li><Link to="/" data-testid="home-link">Home</Link></li>
+            <li><Link to="/about" data-testid="about-link">About</Link></li>
+            <li><Link to="/users" data-testid="users-link">Users</Link></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <AppRouter />
+      </main>
+    </>
+);
 }
 
 export default App;

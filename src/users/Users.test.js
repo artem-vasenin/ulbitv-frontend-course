@@ -1,11 +1,13 @@
 import axios from "axios";
-import { render, screen, fireEvent } from '@testing-library/react';
+import { MemoryRouter } from "react-router-dom";
+import userEvent from "@testing-library/user-event";
+import { render, screen } from '@testing-library/react';
 
-import {Users} from "./Users";
+import {AppRouter} from "../router/AppRouter";
 
 jest.mock('axios');
 
-describe('Users text', () => {
+describe('Users test', () => {
   let resp;
   beforeEach(() => {
     resp = {
@@ -84,10 +86,16 @@ describe('Users text', () => {
   });
   test('Render users list', async () => {
     axios.get.mockReturnValue(resp);
-    render(<Users />);
+    render(
+      <MemoryRouter initialEntries={['/users']}>
+        <AppRouter />
+      </MemoryRouter>
+    );
     const users = await screen.findAllByTestId('user-item');
     expect(users.length).toBe(3);
     expect(axios.get).toBeCalledTimes(1);
+    userEvent.click(users[1]);
+    expect(screen.getByTestId('title')).toContainHTML('User details')
     screen.debug();
   });
 });
