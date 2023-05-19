@@ -29,6 +29,5 @@ describe('Router test block', () => {
       </MemoryRouter>
     );
     expect(screen.getByTestId('title')).toContainHTML('404 Not found')
-    screen.debug()
   });
 });

@@ -96,6 +96,5 @@ describe('Users test', () => {
     expect(axios.get).toBeCalledTimes(1);
     userEvent.click(users[1]);
     expect(screen.getByTestId('title')).toContainHTML('User details')
-    screen.debug();
   });
 });
