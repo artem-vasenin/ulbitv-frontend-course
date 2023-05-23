@@ -1,16 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from './hooks/redux';
-import { userSlice } from './store/reducers/userSlice';
+import { getUsersList } from './store/reducers/actionCreator';
 
 function App() {
-  const { count } = useAppSelector(state => state.userReducer);
-  const { inc } = userSlice.actions;
+  const { list, loader, error } = useAppSelector(state => state.userReducer);
   const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(getUsersList());
+  }, []);
+
+  if (loader) return <h1>Загрузка...</h1>
+  if (error) return <h1>{error}</h1>
+  if (!error && !loader && !list.length) return <h1>Список пуст</h1>
 
   return (
     <div className="App">
-      <h1>{count}</h1>
-      <button onClick={() => dispatch(inc(1))}>INC</button>
+      <h1>Users</h1>
+      {list.map(i => (
+        <ol key={i.id}>
+          <li>{i.id}. {i.name}</li>
+        </ol>
+      ))}
     </div>
   );
 }
