@@ -3,12 +3,12 @@ import React, { FC, useEffect } from 'react';
 import { useActions } from '../../hooks/useActions';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 
-export const UsersList: FC = () => {
-  const {getUsers} = useActions();
-  const {loading, list, error} = useTypedSelector(state => state.users);
+export const ToDoList: FC = () => {
+  const {getTodos} = useActions();
+  const {loading, list, error, page, limit} = useTypedSelector(state => state.todo);
 
   useEffect(() => {
-    getUsers();
+    getTodos(page, limit);
   }, []);
 
   if (loading) {
@@ -25,7 +25,7 @@ export const UsersList: FC = () => {
 
   return (
     <section>
-      <ol>{list.map(u => <li key={u.id}>{u.name}</li>)}</ol>
+      <ol>{list.map(u => <li key={u.id}>{u.id} - {u.title}</li>)}</ol>
     </section>
   );
 };
