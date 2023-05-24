@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from './hooks/redux';
 import { getUsersList } from './store/reducers/actionCreator';
+import { Posts } from './components/Posts';
 
 function App() {
   const { list, loader, error } = useAppSelector(state => state.userReducer);
@@ -22,6 +23,10 @@ function App() {
           <li>{i.id}. {i.name}</li>
         </ol>
       ))}
+
+      <br />
+
+      <Posts />
     </div>
   );
 }
