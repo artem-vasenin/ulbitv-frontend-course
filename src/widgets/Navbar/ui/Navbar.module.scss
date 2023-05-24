@@ -1,0 +1,31 @@
+.section {
+  background-color: var(--inverted-bg-color);
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+.li {
+  margin-right: 10px;
+
+  a {
+    color: var(--inverted-primary-color);
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover {
+
+    }
+  }
+}

@@ -1,9 +1,9 @@
 // Record это тип который в качестве ключа примет строку а в качестве значения булик или строку
 type Mods = Record<string, boolean | string>
-export const classNames = (cls: string, additional: string[], mods: Mods = {}): string => {
+export const classNames = (cls: string, additional: string[] = [], mods: Mods = {}): string => {
   return [
     cls,
-    ...additional,
+    ...additional.filter(Boolean),
     ...Object.entries(mods)
       .filter(([_, val]) => Boolean(val))
       .map(([key, _]) => key),
