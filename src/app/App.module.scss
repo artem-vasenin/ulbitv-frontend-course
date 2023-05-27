@@ -1,0 +1,9 @@
+.content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main {
+  width: calc(100% - var(--sidebar-width));
+  padding: 20px;
+}

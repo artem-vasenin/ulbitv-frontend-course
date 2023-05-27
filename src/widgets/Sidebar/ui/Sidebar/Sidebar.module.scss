@@ -1,0 +1,19 @@
+.section {
+  height: calc(100vh - var(--navbar-height) - 1px);
+  width: var(--sidebar-width);
+  background: var(--inverted-bg-color);
+  position: relative;
+  padding: 20px;
+  margin-top: 1px;
+  transition: width .2s ease;
+
+  &.collapsed {
+    width: var(--sidebar-collapsed-width);
+    transition: width .2s ease;
+    padding: 20px 6px;
+  }
+}
+
+.menuIcon {
+  stroke: var(--inverted-primary-color);
+}

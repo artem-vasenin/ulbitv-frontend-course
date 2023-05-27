@@ -1,5 +1,7 @@
 .section {
   background-color: var(--inverted-bg-color);
+  height: var(--navbar-height);
+  border-bottom: 1px solid var(--inverted-bg-color);
 }
 
 .row {
