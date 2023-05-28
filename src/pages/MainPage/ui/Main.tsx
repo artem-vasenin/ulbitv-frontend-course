@@ -1,7 +1,11 @@
+import { useTranslation } from 'react-i18next';
+
 const MainPage = () => {
+  const { t } = useTranslation();
+
   return (
     <div>
-      Main
+      {t('menu_item_main')}
     </div>
   );
 };
