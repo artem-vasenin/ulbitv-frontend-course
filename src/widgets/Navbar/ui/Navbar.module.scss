@@ -11,6 +11,12 @@
   padding: 10px 0;
 }
 
+.col {
+  &.colLeft {
+    display: flex;
+  }
+}
+
 .ul {
   margin: 0;
   padding: 0;
