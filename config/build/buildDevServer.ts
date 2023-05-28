@@ -5,4 +5,5 @@ export const buildDevServer = (options: BuildOptions): DSConfig => ({
   port: options.port,
   open: true,
   historyApiFallback: true,
+  hot: true,
 });
