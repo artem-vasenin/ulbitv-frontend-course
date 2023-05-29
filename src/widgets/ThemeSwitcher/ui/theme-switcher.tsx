@@ -1,8 +1,8 @@
-import cls from './theme-twitcher.module.scss';
 import { classNames as cx } from 'shared/lib/classNames/classNames';
 import { useTheme } from 'app/providers/ThemeProvider';
 import Sun from 'shared/assets/icons/sun.svg';
 import { BaseBtn, ThemeButton } from 'shared/ui/BaseBtn';
+import cls from './theme-twitcher.module.scss';
 
 export const ThemeSwitcher = ({ className }: { className?: string }) => {
   const { theme, toggleTheme } = useTheme();
@@ -14,7 +14,7 @@ export const ThemeSwitcher = ({ className }: { className?: string }) => {
         onClick={toggleTheme}
         theme={ThemeButton.CLEAR}
       >
-        <Sun className={cls.icon}/>
+        <Sun className={cls.icon} />
       </BaseBtn>
     </div>
   );

@@ -1,5 +1,5 @@
-import cls from './About.module.scss';
 import { useTranslation } from 'react-i18next';
+import cls from './About.module.scss';
 
 const About = () => {
   const { t } = useTranslation();

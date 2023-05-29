@@ -17,6 +17,7 @@ export const BaseBtn: FC<ButtonProps> = (props) => {
 
   return (
     <button
+      type="button"
       className={cx(cls.btn, [className, cls[theme]])}
       {...rest}
     >
