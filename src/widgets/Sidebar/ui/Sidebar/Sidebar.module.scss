@@ -5,11 +5,11 @@
   position: relative;
   padding: 20px;
   margin-top: 1px;
-  transition: width .2s ease;
+  transition: width 0.2s ease;
 
   &.collapsed {
     width: var(--sidebar-collapsed-width);
-    transition: width .2s ease;
+    transition: width 0.2s ease;
     padding: 20px 6px;
   }
 }

@@ -1,6 +1,5 @@
 @import "variables/global";
 @import "base/reset";
-@import "base/base";
 @import "base/container";
 @import "themes/dark";
 @import "themes/light";
@@ -11,4 +10,3 @@
   color: var(--primary-color);
   min-height: 100vh;
 }
-
