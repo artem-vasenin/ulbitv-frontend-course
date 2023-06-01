@@ -4,5 +4,7 @@
 
   "menu_item_main": "Main",
   "menu_item_about": "About",
-  "page_not_found": "Page Not Found"
+  "page_not_found": "Page Not Found",
+  "strange_error": "Strange Error",
+  "reload_page": "Reload Page"
 }

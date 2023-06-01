@@ -38,7 +38,7 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'no-underscore-dangle': 'off',
     'max-len': ['error', { ignoreComments: true, code: 120 }],
-    'eslint-disable-next-line': [0],
+    'no-restricted-globals': [0],
   },
   globals: {
     __IS_DEV__: true,

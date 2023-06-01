@@ -4,5 +4,7 @@
 
   "menu_item_main": "Главная",
   "menu_item_about": "О нас",
-  "page_not_found": "Страница не найдена"
+  "page_not_found": "Страница не найдена",
+  "strange_error": "Непредвиденная ошибка",
+  "reload_page": "Обновить страницу"
 }
