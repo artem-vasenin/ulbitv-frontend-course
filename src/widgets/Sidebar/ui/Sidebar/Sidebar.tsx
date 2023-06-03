@@ -10,9 +10,10 @@ export const Sidebar = ({ className }: { className?: string }) => {
 
   return (
     <aside
+      data-testid="aside"
       className={classNames(cls.section, [className], { [cls.collapsed]: collapsed })}
     >
-      <BaseBtn theme={ThemeButton.CLEAR} onClick={() => setCollapsed(!collapsed)}>
+      <BaseBtn data-testid="aside-button" theme={ThemeButton.CLEAR} onClick={() => setCollapsed(!collapsed)}>
         <SidebarIcon className={cls.menuIcon} />
       </BaseBtn>
     </aside>

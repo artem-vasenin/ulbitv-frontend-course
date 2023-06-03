@@ -4,6 +4,8 @@
  * https://jestjs.io/docs/configuration
  */
 
+import * as path from 'path';
+
 export default {
   // Automatically clear mock calls, instances and results before every test
   clearMocks: true,
@@ -44,6 +46,7 @@ export default {
   setupFilesAfterEnv: ['<rootDir>config/jest/jest.setup.ts'],
   moduleNameMapper: {
     '\\.(s?css)$': 'identity-obj-proxy',
+    '\\.(svg)$': path.resolve(__dirname, 'jestEmptyMockComponent.tsx'),
   },
 
   // All imported modules in your tests should be mocked automatically
