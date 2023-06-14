@@ -1,4 +1,5 @@
 .section {
+  padding: 10px 0;
   background-color: var(--inverted-bg-color);
   height: var(--navbar-height);
   border-bottom: 1px solid var(--inverted-bg-color);
@@ -8,13 +9,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0;
 }
 
 .col {
   &.colLeft {
     display: flex;
   }
+}
+
+.themeSwitcherBtn {
+  padding: 2px 4px 0;
 }
 
 .ul {

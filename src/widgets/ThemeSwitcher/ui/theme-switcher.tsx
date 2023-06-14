@@ -1,16 +1,21 @@
-import { classNames as cx } from 'shared/lib/classNames/classNames';
-import { useTheme } from 'app/providers/ThemeProvider';
 import Sun from 'shared/assets/icons/sun.svg';
+import { useTheme } from 'app/providers/ThemeProvider';
 import { BaseBtn, ThemeButton } from 'shared/ui/BaseBtn';
+import { classNames as cx } from 'shared/lib/classNames/classNames';
 import cls from './theme-twitcher.module.scss';
 
-export const ThemeSwitcher = ({ className }: { className?: string }) => {
+interface Props {
+  className?: string;
+  btnClassName?: string;
+}
+
+export const ThemeSwitcher = ({ className, btnClassName }: Props) => {
   const { theme, toggleTheme } = useTheme();
 
   return (
     <div className={cx(cls.wrapper, [className])}>
       <BaseBtn
-        className={cls.btn}
+        className={cx(cls.btn, [btnClassName])}
         onClick={toggleTheme}
         theme={ThemeButton.CLEAR}
       >

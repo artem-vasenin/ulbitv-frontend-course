@@ -10,10 +10,53 @@
   &.collapsed {
     width: var(--sidebar-collapsed-width);
     transition: width 0.2s ease;
-    padding: 20px 6px;
+
+    .menuItemText {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .menuItemIconBlock {
+      margin-right: 0;
+    }
   }
 }
 
 .menuIcon {
   stroke: var(--inverted-primary-color);
+}
+
+.menuItemIconBlock {
+  display: inline-flex;
+  justify-content: center;
+  width: 47px;
+  height: 40px;
+  margin-right: 4px;
+}
+
+.menuItemIcon {
+  stroke: var(--inverted-primary-color);
+}
+
+.ul {
+  margin: 0;
+  padding: 20px 0 0;
+  list-style: none;
+}
+
+.li {
+  height: 40px;
+  margin-bottom: 10px;
+
+  a {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.menuItemText {
+  display: inline-block;
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }

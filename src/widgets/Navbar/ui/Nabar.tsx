@@ -13,7 +13,7 @@ export const Navbar = ({ className }: { className?: string }) => {
     <nav className={cx(cls.section, [className])}>
       <div className={cx('container', [cls.row])}>
         <div className={cx(cls.col, [cls.colLeft])}>
-          <ThemeSwitcher className={cls.themeSwitcher} />
+          <ThemeSwitcher className={cls.themeSwitcher} btnClassName={cls.themeSwitcherBtn} />
           <LangSwitcher className={cls.themeSwitcher} />
         </div>
         <div className={cx(cls.col, [cls.colRight])}>
